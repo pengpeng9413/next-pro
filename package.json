@@ -9,7 +9,9 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "lint": "lint-staged"
+    "lint": "lint-staged",
+    "lint:css": "stylelint './**/*.{ts,tsx}'",
+    "prettier": "prettier --write './**/*.{ts,tsx}' "
   },
   "husky": {
     "hooks": {
@@ -19,7 +21,7 @@
   "lint-staged": {
     "*.{ts,tsx}": [
       "prettier --write",
-      "tslint --fix",
+      "eslint --fix",
       "stylelint --fix",
       "git add"
     ]
@@ -41,6 +43,7 @@
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-prettier": "^3.1.2",
     "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
     "typescript": "latest"
   }
